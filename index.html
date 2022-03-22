@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#ajaxBtn').click(function () {
+                $.ajax('https://www.dextools.io/app/ether/pair-explorer/0xd34e4855146ac0c6d0e4a652bd5fb54830f91ba8',
+                    {
+
+                        success: function (data, status, xhr) {
+                            console.log('------------------1-------------');
+                            console.log(data);
+                            console.log(status);
+                            console.log(xhr);
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                            console.log('------------------2-------------');
+                            console.log(jqXhr);
+                            console.log(textStatus);
+                            console.log(errorMessage);
+                        }
+                    });
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1> jQuery ajax() demo
+    </h1>
+    <input type="button" id="ajaxBtn" value="Send Ajax request" />
+    <p>
+    </p>
+</body>
+
+</html>
+<!DOCTYPE html>
